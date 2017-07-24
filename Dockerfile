@@ -1,4 +1,4 @@
-FROM fluent/fluentd:v0.14
+FROM fluent/fluentd:v0.14-debian
 
 MAINTAINER Ahmad Iqbal Ali <ahmadiq@gmail.com>
 
