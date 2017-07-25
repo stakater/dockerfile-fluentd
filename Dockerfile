@@ -26,4 +26,4 @@ COPY start-fluentd /bin/
 RUN chmod +x /bin/start-fluentd
 
 ENTRYPOINT ["/bin/start-fluentd"]
-CMD fluentd -c /fluentd/etc/${FLUENTD_CONF} -p /fluentd/plugins $FLUENTD_OPT
+CMD fluentd -c /fluentd/etc/fluent.conf

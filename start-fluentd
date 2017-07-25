@@ -36,7 +36,8 @@ KUBERNETES_PRESERVE_JSON_LOG=${KUBERNETES_PRESERVE_JSON_LOG:-true}
 KUBERNETES_URL=${KUBERNETES_URL:-https://kubernetes.default.svc}
 KUBERNETES_VERIFY_SSL=${KUBERNETES_VERIFY_SSL:-true}
 
-cat << EOF >> /fluentd/etc/${FLUENTD_CONF}
+
+cat > /fluentd/etc/fluent.conf <<EOF
 # input plugin that exports metrics
 <source>
   @type prometheus
@@ -98,9 +99,6 @@ cat << EOF >> /fluentd/etc/${FLUENTD_CONF}
   logstash_format ${FLUENTD_LOGSTASH_FORMAT}
   $([ -n "${FLUENTD_LOGSTASH_PREFIX}" ] && echo logstash_prefix ${FLUENTD_LOGSTASH_PREFIX})
   reload_connections false
-EOF
-
-cat << 'EOF' >> /fluentd/etc/${FLUENTD_CONF}
 </match>
 EOF
 
