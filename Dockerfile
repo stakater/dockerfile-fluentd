@@ -22,12 +22,12 @@ RUN apk update \
         ruby-dev wget gnupg \
  && update-ca-certificates \
  && echo 'gem: --no-document' >> /etc/gemrc \
- && gem install fluentd -v 0.12.34 \
+ && gem install fluentd \
  && gem install oj \
  && gem install json \
- && gem install fluent-plugin-elasticsearch -v 1.9.3 \
- && gem install fluent-plugin-kubernetes_metadata_filter -v 0.32.0 \
- && gem install fluent-plugin-prometheus -v 0.4.0 \
+ && gem install fluent-plugin-elasticsearch \
+ && gem install fluent-plugin-kubernetes_metadata_filter \
+ && gem install fluent-plugin-prometheus \
  && apk del .build-deps \
  && rm -rf /var/cache/apk/* \
  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem
