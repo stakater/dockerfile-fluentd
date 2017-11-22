@@ -55,4 +55,4 @@ RUN apk update \
  && rm -rf /var/cache/apk/* \
  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem
 
-ENTRYPOINT ["je", "fluentd", "-c", "/fluentd/etc/fluent.conf"]
+CMD exec fluentd -c /fluentd/etc/fluent.conf
