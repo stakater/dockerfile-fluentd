@@ -25,8 +25,8 @@ RUN apk update \
  && gem install fluentd -v 0.14.23 \
  && gem install oj \
  && gem install json \
- && gem install fluent-plugin-concat -v 2.0.0 \
- && gem install fluent-plugin-elasticsearch -v 2.0.0 \
+ && gem install fluent-plugin-concat \
+ && gem install fluent-plugin-elasticsearch \
  && apk del .build-deps \
  && rm -rf /var/cache/apk/* \
  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem
