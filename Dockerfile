@@ -51,6 +51,4 @@ ENV DUMB_INIT_SETSID 0
 
 EXPOSE 24224 5140
 
-ENTRYPOINT ["fluentd"]
-
-CMD -c /fluentd/etc/${FLUENTD_CONF}
+ENTRYPOINT ["exec fluentd -c /fluentd/etc/${FLUENTD_CONF} -p /fluentd/plugins $FLUENTD_OPT"]
