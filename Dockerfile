@@ -28,6 +28,7 @@ RUN apk update \
  && gem install fluent-plugin-concat -v 1.0.0 \
  && gem install fluent-plugin-elasticsearch -v 1.9.3 \
  && gem install fluent-plugin-parser -v 0.6.1 \
+ && gem install fluent-plugin-kubernetes_metadata_filter -v 0.32.0 \
  && apk del .build-deps \
  && rm -rf /var/cache/apk/* \
  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem
