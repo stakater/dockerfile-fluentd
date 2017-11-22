@@ -15,4 +15,4 @@ RUN scl enable rh-ruby23 'gem install --no-document fluent-plugin-kubernetes_met
 
 COPY ./start-fluentd.sh /opt
 
-ENTRYPOINT ["/opt/start-fluentd.sh"]
+ENTRYPOINT ["/bin/bash -c /opt/start-fluentd.sh"]
