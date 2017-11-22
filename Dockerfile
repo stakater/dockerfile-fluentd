@@ -24,7 +24,7 @@ RUN apk update \
  && echo 'gem: --no-document' >> /etc/gemrc \
  && gem install oj -v 2.18.3 \
  && gem install json -v 2.1.0 \
- && gem install fluentd -v 0.14.23 \
+ && gem install fluentd -v 0.14.0 \
  && gem install fluent-plugin-concat -v 2.0.1 \
  && gem install fluent-plugin-elasticsearch \
  && gem install fluent-plugin-parser -v 0.6.1 \
