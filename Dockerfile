@@ -22,7 +22,7 @@ RUN apk update \
         ruby-dev wget gnupg \
  && update-ca-certificates \
  && echo 'gem: --no-document' >> /etc/gemrc \
- && gem install fluentd -v 0.14.0 \
+ && gem install fluentd -v 0.14.23 \
  && gem install oj \
  && gem install json \
  && gem install fluent-plugin-concat -v 2.0.0 \
