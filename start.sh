@@ -10,6 +10,6 @@ set -- "${CMD_ARRAY[@]}"
 # From this point, positional parameters ($@)will be set to the parameters in the COMMAND variable.
 
 # chown home and data folder
-chown -R stakater /fluentd
+chown -R fluentd /fluentd
 
-exec su-exec stakater "$@"
+exec su-exec fluentd "$@"

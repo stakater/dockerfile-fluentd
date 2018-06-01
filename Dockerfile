@@ -1,11 +1,12 @@
-FROM stakater/base-alpine:3.6
+FROM stakater/base-alpine:3.7
 LABEL maintainer "Hazim <hazim_malik@hotmail.com>"
 
 ARG DEBIAN_FRONTEND=noninteractive
-ARG FLUENTD_VERSION=0.14.25
+ARG FLUENTD_VERSION=1.2.0
 # Do not split this into multiple RUN!
 # Docker creates a layer for every RUN-Statement
 # therefore an 'apk delete' has no effect
+
 RUN apk update \
  && apk upgrade \
  && apk add --no-cache \
@@ -22,6 +23,11 @@ RUN apk update \
  && apk del .build-deps \
  && rm -rf /var/cache/apk/* \
  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem
+
+# Create user
+RUN addgroup fluentd && \
+    adduser -S -G fluentd fluentd && \
+    adduser -S -G fluentd sudo
 
 # for log storage (maybe shared with host)
 RUN mkdir -p /fluentd/log
