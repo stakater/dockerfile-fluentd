@@ -24,6 +24,11 @@ RUN apk update \
  && rm -rf /var/cache/apk/* \
  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem
 
+# Create user
+RUN addgroup fluentd && \
+    adduser -S -G fluentd fluentd && \
+    adduser -S -G fluentd sudo
+
 # for log storage (maybe shared with host)
 RUN mkdir -p /fluentd/log
 # configuration/plugins path (default: copied from .)

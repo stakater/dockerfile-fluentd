@@ -9,10 +9,6 @@ IFS=' ' read -r -a CMD_ARRAY <<< "$COMMAND"
 set -- "${CMD_ARRAY[@]}"
 # From this point, positional parameters ($@)will be set to the parameters in the COMMAND variable.
 
-addgroup fluentd
-adduser -S -G fluentd fluentd
-adduser -S -G fluentd sudo
-
 # chown home and data folder
 chown -R fluentd /fluentd
 
