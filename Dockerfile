@@ -1,11 +1,12 @@
-FROM stakater/base-alpine:3.6
+FROM stakater/base-alpine:3.7
 LABEL maintainer "Hazim <hazim_malik@hotmail.com>"
 
 ARG DEBIAN_FRONTEND=noninteractive
-ARG FLUENTD_VERSION=0.14.25
+ARG FLUENTD_VERSION=1.2.0
 # Do not split this into multiple RUN!
 # Docker creates a layer for every RUN-Statement
 # therefore an 'apk delete' has no effect
+
 RUN apk update \
  && apk upgrade \
  && apk add --no-cache \
